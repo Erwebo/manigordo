@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Manigordo · Propuesta de página web</title>
+<meta name="description" content="Propuesta de página web para Manigordo Bar & Restaurant: qué gana, qué trae y próximos pasos.">
+<meta property="og:title" content="Manigordo · Propuesta de página web">
+<meta property="og:description" content="Qué gana Manigordo con su propia página, qué trae y qué necesitamos para publicarla.">
+<meta property="og:image" content="https://erwebo.github.io/manigordo/img/jaguar.jpg">
+<link rel="icon" href="../img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  /* Documento para leer: papel hueso, tinta noche, acentos de la marca */
+  :root {
+    --papel: #F3EFE4;
+    --papel-2: #E9E3D3;
+    --tinta: #16151D;
+    --tinta-2: #4A4740;
+    --caqui: #8C8161;
+    --brasa: #B5701A;
+    --noche: #0F0E17;
+    --hueso: #EFEADC;
+    --linea: rgba(22, 21, 29, .14);
+    --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+    --texto: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
+  }
+  html { background: var(--papel); }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 17px/1.65 var(--texto); -webkit-font-smoothing: antialiased; }
+  a { color: var(--brasa); }
+  a:focus-visible { outline: 2px solid var(--brasa); outline-offset: 3px; }
+  .envoltura { max-width: 820px; margin-inline: auto; padding-inline: 20px; }
+
+  .portada { background: var(--noche) url("../img/jaguar.jpg") center / cover; color: var(--hueso); position: relative; }
+  .portada::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,14,23,.7), rgba(15,14,23,.92)); }
+  .portada .envoltura { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(40px, 7vw, 72px); }
+  .portada img { width: 64px; height: auto; display: block; margin-bottom: 22px; }
+  .rotulo { font: 600 12.5px/1 var(--texto); letter-spacing: .18em; text-transform: uppercase; color: #B9AE8E; margin: 0 0 14px; }
+  h1 { font: 900 clamp(48px, 9vw, 92px)/.88 var(--display); text-transform: uppercase; margin: 0; letter-spacing: .005em; text-wrap: balance; }
+  .portada p.lead { font-size: clamp(18px, 2.3vw, 21px); line-height: 1.5; max-width: 40ch; margin: 22px 0 28px; color: var(--hueso); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: #B9AE8E; color: var(--noche); text-decoration: none; font: 600 16px/1 var(--texto); padding: 16px 24px; border-radius: 2px; }
+  .btn:hover { background: #D9D0B4; }
+  .firma { margin-top: 28px; font-size: 14px; color: #A29E93; }
+
+  main { padding-block: clamp(40px, 7vw, 72px) 40px; }
+  section { padding-block: 28px; border-top: 1px solid var(--linea); }
+  section:first-child { border-top: 0; }
+  h2 { font: 800 clamp(32px, 4.6vw, 44px)/1 var(--display); text-transform: uppercase; margin: 0 0 16px; letter-spacing: .01em; text-wrap: balance; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .destacado { font-size: 19px; font-weight: 500; }
+
+  .tabla { overflow-x: auto; margin: 18px 0; border-top: 2px solid var(--tinta); }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 15px; line-height: 1.45; }
+  th { text-align: left; font: 600 12px/1.2 var(--texto); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); padding: 12px 14px 10px 0; }
+  td { vertical-align: top; padding: 12px 14px 12px 0; border-top: 1px solid var(--linea); }
+  td:first-child { font-weight: 600; width: 26%; }
+
+  .beneficios { list-style: none; counter-reset: b; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; }
+  .beneficios li { counter-increment: b; display: grid; grid-template-columns: 40px 1fr; gap: 4px 12px; }
+  .beneficios li::before { content: counter(b); grid-row: span 2; font: 900 34px/1 var(--display); color: var(--brasa); }
+  .beneficios strong { font-weight: 600; }
+  .beneficios span { color: var(--tinta-2); font-size: 15.5px; }
+
+  .pasos { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+  .pasos li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+  .pasos li::before { content: ""; width: 16px; height: 16px; border: 1.5px solid var(--tinta); border-radius: 2px; margin-top: 4px; }
+
+  .puntos { margin: 12px 0; padding-left: 20px; }
+  .puntos li { margin-bottom: 10px; max-width: 68ch; }
+  .puntos li::marker { color: var(--brasa); }
+  .cierre { background: var(--noche); color: var(--hueso); border-radius: 2px; padding: clamp(24px, 4vw, 40px); margin-top: 24px; }
+  .cierre h2 { color: var(--hueso); }
+  .cierre p { color: #CFC8B6; }
+  .fuentes { font-size: 14px; color: var(--tinta-2); }
+  footer { border-top: 1px solid var(--linea); padding-block: 24px 48px; font-size: 14px; color: var(--tinta-2); }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .envoltura { padding-inline: 16px; }
+    .beneficios { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <div class="envoltura">
+    <img src="../img/logo.png" alt="Logo de Manigordo" width="300" height="242">
+    <p class="rotulo">Propuesta · septiembre 2026</p>
+    <h1>Una casa propia para Manigordo en internet</h1>
+    <p class="lead">Manigordo ya tiene lo difícil: buena comida, 4.7 de 5 en Degusta y casi 6,000 seguidores. Le falta una página propia que junte todo eso y convierta a quien lo busca en una mesa reservada.</p>
+    <a class="btn" href="../">Ver la página de muestra →</a>
+    <p class="firma">Preparado por Proyecto Tokyo · <a href="https://proyectotokyo.com" style="color:#D9D0B4">ProyectoTokyo.com</a></p>
+  </div>
+</header>
+
+<main class="envoltura">
+  <section>
+    <h2>Cómo están hoy</h2>
+    <p>Hoy la información de Manigordo está repartida en cinco sitios distintos, y ninguno es suyo.</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Dónde</th><th>Qué tiene</th><th>El problema</th></tr></thead>
+        <tbody>
+          <tr><td>Beacons</td><td>Tres botones: Menú, Visítanos y Sugerencias</td><td>No dice qué es Manigordo, ni el horario, ni muestra comida. Google no lo reconoce como restaurante.</td></tr>
+          <tr><td>Instagram</td><td>150 publicaciones, 5,853 seguidores y el horario en la bio</td><td>Solo llega a quien ya los sigue. Las promos se pierden en el feed a los pocos días.</td></tr>
+          <tr><td>QueRestó</td><td>La carta completa con precios</td><td>Tiene una dirección genérica y un teléfono distinto al de Beacons.</td></tr>
+          <tr><td>Degusta</td><td>16 reseñas, 4.7 en comida</td><td>Esas reseñas tan buenas no aparecen en ningún canal propio.</td></tr>
+          <tr><td>Waze y Google Maps</td><td>La ubicación</td><td>Cada cliente tiene que buscarla por su cuenta.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>El resultado: quien busca “bar en Ancón” o “cócteles con ron panameño” no encuentra a Manigordo, y quien sí lo encuentra tiene que saltar entre tres o cuatro pantallas para decidirse.</p>
+  </section>
+
+  <section>
+    <h2>Qué busca la gente antes de ir</h2>
+    <p class="destacado">La carta es lo que decide la visita, y una página confusa o vieja espanta clientes.</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Dato</th><th>Qué significa para Manigordo</th></tr></thead>
+        <tbody>
+          <tr><td>77% revisa la web del restaurante antes de ir</td><td>Sin página propia, esa revisión pasa por Beacons o QueRestó, con datos que no coinciden.</td></tr>
+          <tr><td>Lo que más decide la visita son los platos de la carta</td><td>La carta completa, con filtros, vive en la página.</td></tr>
+          <tr><td>Casi 70% ha descartado un restaurante por su web</td><td>33% porque era difícil de usar y 30% porque se veía vieja. Por eso: diseño claro, con su marca y pensado para el celular.</td></tr>
+          <tr><td>59% prefiere reservar en línea, la mitad desde el celular</td><td>Un formulario de reserva que abre WhatsApp con el mensaje listo.</td></tr>
+          <tr><td>46% mira primero las reseñas de Google</td><td>Un botón que invita a dejar reseña en Google, y la ficha de Maps al día.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fuentes">Fuentes: encuesta MGH publicada en <a href="https://www.restaurantdive.com/news/77-of-diners-visit-restaurant-websites-before-going-survey-finds/562008/">Restaurant Dive</a> y datos de reservas de <a href="https://pos.toasttab.com/blog/data/restaurant-wait-times-and-reservations-data">Toast</a>.</p>
+  </section>
+
+  <section>
+    <h2>Qué gana Manigordo</h2>
+    <ol class="beneficios">
+      <li><strong>Lo encuentran en Google.</strong><span>La carta en texto hace que Google la muestre cuando alguien busca “alitas”, “tarta vasca” o “bar en Ancón”.</span></li>
+      <li><strong>Más mesas reservadas.</strong><span>El botón de reservar abre WhatsApp con el mensaje ya escrito, y en el celular siempre está a la vista.</span></li>
+      <li><strong>Todo en un solo enlace.</strong><span>Carta, horario, ubicación, promos y reseñas. Sirve para la bio de Instagram, los QR de las mesas y los anuncios.</span></li>
+      <li><strong>Las promos no se pierden.</strong><span>La tarta vasca de los martes y el karaoke de los sábados quedan fijos hasta que ustedes los cambien.</span></li>
+      <li><strong>Su historia se cuenta sola.</strong><span>El manigordo, los embajadores de las paredes, el tren y el perezoso: lo que hace a Manigordo distinto, contado en un solo lugar.</span></li>
+      <li><strong>Las reseñas trabajan para ustedes.</strong><span>El 4.7 de Degusta y lo que dicen los clientes se ve apenas entran.</span></li>
+      <li><strong>Cada alianza tiene dónde vivir.</strong><span>Barracuda, Fusion Training, Vaska Baking y Casa Barú tienen su espacio.</span></li>
+      <li><strong>Es suya.</strong><span>Con dominio propio, la página no depende de que Beacons o Instagram cambien sus reglas.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Qué trae la página</h2>
+    <p>La página junta todo lo que Manigordo ya hace y que hoy está repartido en Instagram.</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Sección</th><th>Qué hace</th><th>Por qué</th></tr></thead>
+        <tbody>
+          <tr><td>Menú fijo arriba</td><td>Carta, Grupos, Historia y Visítanos, con “Abierto ahora” o “Cerrado” según la hora de Panamá</td><td>Responde lo primero que la gente pregunta</td></tr>
+          <tr><td>Cada semana</td><td>Promo del mes los lunes, Happy Hour del tren de martes a viernes, tarta vasca a $6 martes y jueves, tributos los viernes y karaoke los sábados</td><td>Da una razón para ir cada día</td></tr>
+          <tr><td>Lo más pedido</td><td>Papas salvajes, alitas, hamburguesa Manigordo y el cóctel El Manigordo, con foto y precio</td><td>Lo que más vende, al frente</td></tr>
+          <tr><td>La carta</td><td>Completa, con filtros: para compartir, sabor panameño, keto/vegano/sin gluten, sin alcohol y con ron panameño</td><td>La carta es lo que decide la visita</td></tr>
+          <tr><td>Reservas</td><td>Formulario (nombre, personas, fecha, hora y ocasión) que abre WhatsApp con el mensaje listo</td><td>Llegan reservas completas, sin ida y vuelta</td></tr>
+          <tr><td>Grupos</td><td>Cumpleaños, after office y equipos, cada uno con su botón</td><td>Las mesas grandes son las que más venden</td></tr>
+          <tr><td>A domicilio</td><td>Uber Eats y pedidos para llevar</td><td>Ventas de quien no puede ir</td></tr>
+          <tr><td>Nuestra historia</td><td>Cinco capítulos: el manigordo, los embajadores de las paredes, el tren, el perezoso y Casa Barú, el ron de la casa</td><td>Una historia que se recuerda y se cuenta</td></tr>
+          <tr><td>Noches en Manigordo</td><td>Galería de la terraza, la música en vivo, la inauguración y el equipo</td><td>Muestra el ambiente antes de llegar</td></tr>
+          <tr><td>Reseñas</td><td>Notas de Degusta, tres reseñas reales y un botón para dejar reseña en Google</td><td>Confianza y más reseñas en Google</td></tr>
+          <tr><td>Preguntas frecuentes</td><td>Horario, ubicación, reservas, Happy Hour, karaoke, opciones veganas, mascotas, delivery y pagos</td><td>Resuelve dudas, y Google las muestra en sus resultados</td></tr>
+          <tr><td>Visítanos</td><td>Dirección completa, Waze, Google Maps y buzón de sugerencias</td><td>Llegar sin perderse</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>En el celular quedan fijos abajo tres botones: Reservar, Carta y Llegar. Los textos y las fotos salen de su propio Instagram, Beacons, QueRestó y Degusta.</p>
+  </section>
+
+  <section>
+    <h2>En Google y en el celular</h2>
+    <ul class="puntos">
+      <li><strong>Ficha de restaurante para Google.</strong> La página lleva los datos que Google lee: tipo de negocio, dirección, horario, teléfono y carta.</li>
+      <li><strong>Carta en texto, no en foto.</strong> Cada plato y cada cóctel (Corte Culebra, Brisas de Ancón, Papas salvajes) es una palabra que Google puede encontrar.</li>
+      <li><strong>Pensada para el celular,</strong> que es donde la va a abrir casi todo el mundo.</li>
+      <li><strong>Rápida.</strong> Fotos comprimidas y nada que no haga falta.</li>
+      <li><strong>Google Business Profile.</strong> Recomendamos poner al día su ficha en Google Maps, con el mismo horario, teléfono y enlace. Es lo que más pesa para salir en “restaurantes cerca de mí”.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Para publicarla</h2>
+    <p>Esto es lo que necesitamos de ustedes para pasar de la muestra a la página final:</p>
+    <ul class="pasos">
+      <li>Confirmar el número de reservas. La página usa el 6495-1229, el de sus afiches; ¿tiene WhatsApp?</li>
+      <li>Confirmar que siguen vigentes el Happy Hour del tren (martes a viernes, 5 a 7 p.m.) y la promo del mes de los lunes.</li>
+      <li>Pasar el enlace de su tienda en Uber Eats y confirmar los precios de la carta.</li>
+      <li>Confirmar si hay estacionamiento frente al local y si las mascotas son bienvenidas.</li>
+      <li>Revisar juntos la historia y pedir permiso a Eduardo Estrada para usar su foto del ocelote.</li>
+      <li>Enviar fotos originales en alta calidad, sin textos: comida, barra, salón, terraza y karaoke.</li>
+      <li>Elegir el dominio (por ejemplo, manigordo.com.pa o manigordopanama.com).</li>
+    </ul>
+    <p>Después de publicarla, la mantenemos al día: precios, promos nuevas, cartelera de tributos y fotos por temporada.</p>
+    <p>Más adelante, si les interesa: versión en inglés para los turistas del área del Canal y Albrook, páginas propias para eventos y una tienda para su ropa.</p>
+  </section>
+
+  <div class="cierre">
+    <h2>¿Qué les parece?</h2>
+    <p>La página de muestra está hecha con su carta, sus fotos y su historia reales. Todo se puede cambiar: textos, fotos, colores y secciones.</p>
+    <a class="btn" href="../">Ver la página de muestra →</a>
+  </div>
+</main>
+
+<footer class="envoltura">
+  Preparado por Proyecto Tokyo · <a href="https://proyectotokyo.com">ProyectoTokyo.com</a>
+</footer>
+
+</body>
+</html>
